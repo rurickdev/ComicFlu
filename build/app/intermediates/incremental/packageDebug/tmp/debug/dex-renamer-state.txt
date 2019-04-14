@@ -1,0 +1,4 @@
+#Sun Apr 14 01:03:16 CDT 2019
+base.0=/home/skintigth/Documentos/Escuela/Programing/Flutter/ComicFlu/build/app/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
