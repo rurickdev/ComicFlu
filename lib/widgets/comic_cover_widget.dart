@@ -41,6 +41,7 @@ class CoverWidget extends StatelessWidget {
           ),
           child: Stack(
             children: <Widget>[
+              // ToDo: Agregar este icono de manera dinamica segun es o no un comic favorito
               Positioned(
                 right: 5,
                 top: 5,
@@ -53,8 +54,29 @@ class CoverWidget extends StatelessWidget {
                 bottom: 0,
                 height: 7.5,
                 width: 160,
+                // ToDo: Cambiar el valor hardcodeado por valor real
                 child: LinearProgressIndicator(
                   value: 0.9,
+                ),
+              ),
+              Positioned(
+                bottom: 10,
+                right: 5,
+                child: Container(
+                  width: 40,
+                  padding: EdgeInsets.all(3.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.pink,
+                  ),
+                  child: Center(
+                    child: Text(
+                      '#${comic.issue.toString()}',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],
