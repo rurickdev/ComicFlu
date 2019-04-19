@@ -64,18 +64,18 @@ flutter:
   fonts:
     - family: Quicksand
       fonts:
-        - asset: fonts/quicksand/Quicksand-Regular.otf
-        - asset: fonts/quicksand/Quicksand-Bold.otf
+        - asset: assets/fonts/quicksand/Quicksand-Regular.otf
+        - asset: assets/fonts/quicksand/Quicksand-Bold.otf
           #style: bold
-        - asset: fonts/quicksand/Quicksand-BoldItalic.otf
+        - asset: assets/fonts/quicksand/Quicksand-BoldItalic.otf
           #style: bolditalic
-        - asset: fonts/quicksand/Quicksand-Dash.otf
+        - asset: assets/fonts/quicksand/Quicksand_Dash.otf
           #style: dash
-        - asset: fonts/quicksand/Quicksand-Italic.otf
+        - asset: assets/fonts/quicksand/Quicksand-Italic.otf
           style: italic
-        - asset: fonts/quicksand/Quicksand-Light.otf
+        - asset: assets/fonts/quicksand/Quicksand-Light.otf
           #style: light
-        - asset: fonts/quicksand/Quicksand-LightItalic.otf
+        - asset: assets/fonts/quicksand/Quicksand-LightItalic.otf
           #style: lightitalic
 
   # To add custom fonts to your application, add a fonts section here,
