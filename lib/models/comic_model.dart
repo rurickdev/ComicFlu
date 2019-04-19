@@ -3,6 +3,8 @@ class Comic {
   String _path;
   String _title;
   String _cover;
+  String _releaseDate = 'Unknown';
+  double _progress = 0;
   int _issue;
   int _pages;
 
@@ -19,6 +21,16 @@ class Comic {
   String get path => this._path;
   String get title => this._title;
   String get cover => this._cover;
+  String get releaseDate => this._releaseDate;
+  double get progress => this._progress;
   int get issue => this._issue;
   int get pages => this._pages;
+
+  set releaseDate(String newDate) {
+    this._releaseDate = newDate;
+  }
+
+  set progress(double newProgress) {
+    this._progress = newProgress;
+  }
 }
