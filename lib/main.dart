@@ -8,28 +8,26 @@ void main() {
 }
 
 class ComicFlu extends StatelessWidget {
+  static const Color grisOscuro = Color(0xff263238);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MainScreen(),
       theme: ThemeData(
-        backgroundColor: Color(0xff263238),
-        accentColor: Colors.pink,
-        /*textTheme: TextTheme(          
-          button: TextStyle(color: Colors.white),
-          title: TextStyle(
-            color: Colors.white,
+          backgroundColor: grisOscuro,
+          accentColor: Colors.pink,
+          fontFamily: 'Quicksand',
+          appBarTheme: AppBarTheme(
+            color: grisOscuro,
           ),
-        ),*/
-        fontFamily: 'Quicksand',
-        appBarTheme: AppBarTheme(
-          color: Color(0xff263238),
-        ),
-        buttonTheme: ButtonThemeData(
-          buttonColor: Colors.pink,
-        ),
-      ),
+          buttonTheme: ButtonThemeData(
+            buttonColor: Colors.pink,
+          ),
+          iconTheme: IconThemeData(
+            color: grisOscuro,
+          )),
     );
   }
 }
