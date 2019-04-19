@@ -61,6 +61,23 @@ flutter:
   # For details regarding adding assets from package dependencies, see
   # https://flutter.io/assets-and-images/#from-packages
 
+  fonts:
+    - family: Quicksand
+      fonts:
+        - asset: fonts/quicksand/Quicksand-Regular.otf
+        - asset: fonts/quicksand/Quicksand-Bold.otf
+          #style: bold
+        - asset: fonts/quicksand/Quicksand-BoldItalic.otf
+          #style: bolditalic
+        - asset: fonts/quicksand/Quicksand-Dash.otf
+          #style: dash
+        - asset: fonts/quicksand/Quicksand-Italic.otf
+          style: italic
+        - asset: fonts/quicksand/Quicksand-Light.otf
+          #style: light
+        - asset: fonts/quicksand/Quicksand-LightItalic.otf
+          #style: lightitalic
+
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
