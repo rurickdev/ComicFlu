@@ -16,12 +16,13 @@ class ComicFlu extends StatelessWidget {
       theme: ThemeData(
         backgroundColor: Color(0xff263238),
         accentColor: Colors.pink,
-        textTheme: TextTheme(
+        /*textTheme: TextTheme(          
           button: TextStyle(color: Colors.white),
           title: TextStyle(
             color: Colors.white,
           ),
-        ),
+        ),*/
+        fontFamily: 'Quicksand',
         appBarTheme: AppBarTheme(
           color: Color(0xff263238),
         ),

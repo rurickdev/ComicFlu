@@ -25,7 +25,7 @@ class MainScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Comics Beta'),
+        title: Text('My Comics Beta Q'),
         elevation: 0,
         actions: <Widget>[
           IconButton(
@@ -35,7 +35,7 @@ class MainScreen extends StatelessWidget {
         ],
       ),
       body: FolderWidget(
-        folderName: 'Spider-Gwen: Ghost Spider',
+        folderName: 'Spider-Gwen: Ghost Spider Q',
         comics: listaComics,
       ),
     );
