@@ -13,21 +13,14 @@ class ComicDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.width / 2,
-      margin: EdgeInsets.all(8.0),
+      height: MediaQuery.of(context).size.height / 3.25,
+      margin: EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           //* Portada del comic
-          Container(
-            width: MediaQuery.of(context).size.width / 3,
-            height: MediaQuery.of(context).size.height / 3,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(comic.cover),
-                fit: BoxFit.cover,
-              ),
-            ),
+          Image(
+            image: AssetImage(comic.cover),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -37,15 +30,21 @@ class ComicDetails extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(comic.title),
-                  Text('#${comic.issue}'),
-                  Text('${comic.pages} pages'),
+                  //* Titulo
+                  Text(
+                    comic.title,
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  ),
+                  //* Numero de comic
+                  Text('#${comic.issue} with ${comic.pages} pages'),
+                  //* numero de paginas
+                  // Text('${comic.pages} pages'),
                   Text(comic.path),
                 ],
               ),
-              //* Action Buttons
               Column(
                 children: <Widget>[
+                  //* Action Buttons
                   Container(
                     width: MediaQuery.of(context).size.width / 2,
                     child: Row(
@@ -66,9 +65,15 @@ class ComicDetails extends StatelessWidget {
                           icon: Icon(CommunityMaterialIcons.delete_outline),
                           onPressed: () {},
                         ),
+                        //* Compartir
+                        IconButton(
+                          icon: Icon(CommunityMaterialIcons.share_variant),
+                          onPressed: () {},
+                        ),
                       ],
                     ),
                   ),
+                  //* Open button
                   RaisedButton(
                     textColor: Colors.white,
                     child: Container(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:community_material_icon/community_material_icon.dart';
 import '../widgets/folder_widget.dart';
 import '../models/comic_model.dart';
 
@@ -25,7 +26,8 @@ class MainScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Comics Beta Q'),
+        title: Text('Comic\'s Library Beta'),
+        centerTitle: true,
         elevation: 0,
         actions: <Widget>[
           IconButton(
@@ -33,10 +35,40 @@ class MainScreen extends StatelessWidget {
             onPressed: () {},
           )
         ],
+        //* [Leading] que cambia el icono del [Drawer]
+        leading: Builder(
+          builder: (context) => IconButton(
+                icon: Icon(CommunityMaterialIcons.text),
+                //* Ejecuta la apertura del drawer utilizando un [IconButton] personalizado
+                onPressed: () => Scaffold.of(context).openDrawer(),
+              ),
+        ),
       ),
-      body: FolderWidget(
-        folderName: 'Spider-Gwen: Ghost Spider Q',
-        comics: listaComics,
+      drawer: Drawer(
+        child: Center(
+          child: Text('Hello There'),
+        ),
+      ),
+      body: ListView(
+        addAutomaticKeepAlives: true,
+        children: <Widget>[
+          FolderWidget(
+            folderName: 'Spider-Gwen: Ghost Spider',
+            comics: listaComics,
+          ),
+          FolderWidget(
+            folderName: 'Spider-Gwen: Ghost Spider',
+            comics: listaComics,
+          ),
+          FolderWidget(
+            folderName: 'Spider-Gwen: Ghost Spider',
+            comics: listaComics,
+          ),
+          FolderWidget(
+            folderName: 'Spider-Gwen: Ghost Spider',
+            comics: listaComics,
+          ),
+        ],
       ),
     );
   }

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:community_material_icon/community_material_icon.dart';
 import '../screens/folder_screen.dart';
-import '../screens/reading_screen.dart';
 import '../models/comic_model.dart';
-import 'comic_details_widget.dart';
+import 'comic_cover_widget.dart';
 
 class FolderWidget extends StatelessWidget {
   final String folderName;
-  //ToDo: cambiar de [int] a [Comics]
   final List<Comic> comics;
 
   FolderWidget({
@@ -19,7 +18,7 @@ class FolderWidget extends StatelessWidget {
     List<Widget> listaPortadas = [];
 
     for (Comic comic in comics) {
-      listaPortadas.add(PortadaWidget(comic: comic));
+      listaPortadas.add(CoverWidget(comic: comic));
     }
     return listaPortadas;
   }
@@ -28,17 +27,22 @@ class FolderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
       child: Column(
         children: <Widget>[
           InkWell(
             child: Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text(folderName),
-                  Icon(Icons.archive),
+                  Text(
+                    folderName,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17.5,
+                    ),
+                  ),
+                  Icon(CommunityMaterialIcons.archive),
                 ],
               ),
             ),
@@ -54,7 +58,7 @@ class FolderWidget extends StatelessWidget {
               );
             },
           ),
-          //! El ontap no funciona bien dentro del swiper
+          //! El ontap no funciona bien dentro del [Swiper]
           Swiper(
             layout: SwiperLayout.STACKALT,
             itemCount: comics.length,
@@ -66,48 +70,6 @@ class FolderWidget extends StatelessWidget {
             },
           ),
         ],
-      ),
-    );
-  }
-}
-
-class PortadaWidget extends StatelessWidget {
-  final Comic comic;
-
-  PortadaWidget({
-    @required this.comic,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onLongPress: () {
-        showModalBottomSheet(
-          context: context,
-          builder: (context) {
-            return ComicDetails(
-              comic: comic,
-            );
-          },
-        );
-      },
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ReadingScreen(),
-          ),
-        );
-      },
-      child: Card(
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(comic.cover),
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
       ),
     );
   }
